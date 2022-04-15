@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="388.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentmanagement.controllers.UserController">
+   <children>
+      <ComboBox id="comboClass" fx:id="comboClass" layoutX="14.0" layoutY="55.0" onAction="#comboClassChange" prefWidth="150.0" promptText="Wybierz przedmiot" />
+      <Label layoutX="14.0" layoutY="28.0" text="Przedmiot">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="labName" layoutX="219.0" layoutY="28.0" text="Imię Nazwisko">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ListView fx:id="lvMarks" layoutX="219.0" layoutY="136.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="219.0" layoutY="55.0" text="Średnia:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="219.0" layoutY="105.0" text="Oceny:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="labAvgMark" layoutX="287.0" layoutY="55.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="219.0" layoutY="80.0" text="Stan:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnSign" disable="true" layoutX="29.0" layoutY="303.0" mnemonicParsing="false" onAction="#setBtnSignUp" text="Zapisz" />
+      <Button fx:id="btnResign" disable="true" layoutX="122.0" layoutY="303.0" mnemonicParsing="false" onAction="#setBtnResign" text="Wypisz" />
+      <TableView fx:id="tvMarks" layoutX="219.0" layoutY="136.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+        <columns>
+          <TableColumn fx:id="colClass" prefWidth="118.0" text="Przedmiot" />
+          <TableColumn fx:id="colMark" prefWidth="81.0" text="Ocena" />
+        </columns>
+      </TableView>
+      <Label fx:id="labStudentCond" layoutX="259.0" layoutY="80.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="checkLowScores" layoutX="339.0" layoutY="109.0" mnemonicParsing="false" onAction="#setCheckLowScores" text="Zagrożenia" visible="false" />
+      <Button fx:id="btnExportCsv" disable="true" layoutX="311.0" layoutY="349.0" mnemonicParsing="false" onAction="#exportTableCsv" text="Eksportuj do CSV" />
+   </children>
+</AnchorPane>
